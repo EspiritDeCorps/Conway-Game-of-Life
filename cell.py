@@ -129,7 +129,6 @@ class BorderCellList(list):
 class InfinityCellList(list):
     def __getitem__(self, key):
         try:
-
             return list.__getitem__(self, key)
         except:
             return list.__getitem__(self, 0)
