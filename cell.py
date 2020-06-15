@@ -1,7 +1,9 @@
-import copy
 from random import randint
-import math
 
+"""
+Класс клетки
+
+"""
 
 class Cell:
     cellMatrix = None
@@ -36,7 +38,12 @@ class Cell:
         return neighbors
 
 
-
+"""
+Классы InfinityCellMatrix и BorderCellMatrix реализуют бесконечную и конечную плоскость соотвественно.
+В InfinityCellMatrix при выходе за границы, возвращается нулевой элемент этой последовательности
+В BorderCellMatrix при выходе за границы, возвращается список клеток которые интерпритируются как мёртвые
+Состоят из InfinityCellList и BorderCellList
+"""
 
 class InfinityCellMatrix():
     def __init__(self,columns, rows):
