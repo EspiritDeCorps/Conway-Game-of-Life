@@ -55,9 +55,10 @@ class InfinityCellMatrix():
     def __iter__(self):
         return iter(self.cellMatrix)
     def __getitem__(self, key):
-        if abs(key) >= len(self.cellMatrix): return self.cellMatrix[0]
-        return self.cellMatrix[key]
-
+        try:
+            return self.cellMatrix[key]
+        except:
+            return self.cellMatrix[0]
 
     def __str__(self):
         result = "-" * 30
@@ -127,8 +128,11 @@ class BorderCellList(list):
 
 class InfinityCellList(list):
     def __getitem__(self, key):
-        if abs(key) >= len(self): return list.__getitem__(self,0)
-        return list.__getitem__(self, key)
+        try:
+
+            return list.__getitem__(self, key)
+        except:
+            return list.__getitem__(self, 0)
 
 
 
